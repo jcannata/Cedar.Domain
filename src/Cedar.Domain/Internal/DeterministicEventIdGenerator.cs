@@ -13,23 +13,6 @@
         private static readonly DeterministicGuidGenerator s_deterministicGuidGenerator
             = new DeterministicGuidGenerator(Guid.Parse(Namespace));
 
-        public static Guid Generate(object @event, int expectedVersion, string streamId, Guid commitId)
-        {
-            Ensure.That(@event, "event").IsNotNull();
-            Ensure.That(expectedVersion, "expectedVersion").IsGte(-2);
-            Ensure.That(streamId, "streamId").IsNotNullOrWhiteSpace();
-            Ensure.That(commitId, "commitId").IsNotEmpty();
-
-            var serializedEvent = SimpleJson.SerializeObject(@event);
-
-            var entropy = Encode(serializedEvent)
-                .Concat(Encode(commitId.ToString()))
-                .Concat(BitConverter.GetBytes(expectedVersion))
-                .Concat(Encode(streamId));
-
-            return s_deterministicGuidGenerator.Create(entropy);
-        }
-
         public static Guid Generate(object @event, string streamId, int expectedVersion)
         {
             Ensure.That(@event, "event").IsNotNull();
