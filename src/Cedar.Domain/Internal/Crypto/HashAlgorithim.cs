@@ -29,11 +29,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System.IO;
-using System.Runtime.InteropServices;
-
-namespace System.Security.Cryptography
+namespace Cedar.Domain.Internal.Crypto
 {
+    using System;
+    using System.IO;
+    using System.Runtime.InteropServices;
 
     [ComVisible(true)]
     public abstract class HashAlgorithm : IDisposable

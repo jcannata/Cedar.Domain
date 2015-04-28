@@ -1,0 +1,1 @@
+﻿SHA1 not available in PCL hence this code is imported from Mono.

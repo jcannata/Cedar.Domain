@@ -29,7 +29,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-namespace System.Security.Cryptography
+namespace Cedar.Domain.Internal.Crypto
 {
     public abstract class SHA1 : HashAlgorithm
     {

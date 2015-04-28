@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Security.Cryptography;
     using System.Text;
+    using Cedar.Domain.Internal.Crypto;
 
     public class DeterministicGuidGenerator
     {

@@ -35,9 +35,9 @@
 // Mono must provide those two class for binary compatibility.
 // In our case both class are wrappers around a managed internal class SHA1Internal.
 
-namespace System.Security.Cryptography
+namespace Cedar.Domain.Internal.Crypto
 {
-    internal class SHA1Internal
+    public class SHA1Internal
     {
 
         private const int BLOCK_SIZE_BYTES = 64;
