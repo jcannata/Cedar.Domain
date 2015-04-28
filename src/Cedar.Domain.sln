@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{372F1FB4-22EA-42F7-836F-E83BD252EEC0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A441BD89-E482-408D-A086-030F3BB392F9}"
+	ProjectSection(SolutionItems) = preProject
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cedar.Domain", "Cedar.Domain\Cedar.Domain.csproj", "{8248ED90-E771-4897-84F4-3B87C556B9D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cedar.Domain.Tests", "Cedar.Domain.Tests\Cedar.Domain.Tests.csproj", "{CC4C9925-77D4-47FE-9813-1DF351125B8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cedar.Domain.Testing", "Cedar.Domain.Testing\Cedar.Domain.Testing.csproj", "{EDE15FE4-F35A-4CFB-ACF3-A6EA51D829D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8248ED90-E771-4897-84F4-3B87C556B9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8248ED90-E771-4897-84F4-3B87C556B9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8248ED90-E771-4897-84F4-3B87C556B9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8248ED90-E771-4897-84F4-3B87C556B9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC4C9925-77D4-47FE-9813-1DF351125B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC4C9925-77D4-47FE-9813-1DF351125B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC4C9925-77D4-47FE-9813-1DF351125B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC4C9925-77D4-47FE-9813-1DF351125B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE15FE4-F35A-4CFB-ACF3-A6EA51D829D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE15FE4-F35A-4CFB-ACF3-A6EA51D829D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE15FE4-F35A-4CFB-ACF3-A6EA51D829D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE15FE4-F35A-4CFB-ACF3-A6EA51D829D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
