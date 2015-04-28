@@ -1,4 +1,4 @@
-﻿namespace Cedar.Domain
+﻿namespace Cedar.Domain.Internal
 {
     using System;
     using System.Collections.Generic;
