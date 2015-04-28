@@ -58,9 +58,6 @@
     <Compile Include="IRehydrateAggregate.cs" />
     <Compile Include="IUncommittedEvent.cs" />
     <Compile Include="IUncommittedEvents.cs" />
-    <Compile Include="Persistence\DefaultCreateAggregate.cs" />
-    <Compile Include="Persistence\CreateAggregate.cs" />
-    <Compile Include="Persistence\IAggregateRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleJson.cs" />
   </ItemGroup>
