@@ -83,6 +83,26 @@
                 .Run();
         }
 
+        [Fact]
+        public async Task an_aggregate_throwing_an_un_expected_exception_should()
+        {
+            Exception caughtException = null;
+
+            try
+            {
+                await Scenario.ForAggregate(id => new BuggyAggregate(id))
+                .When(a => a.DoSomething())
+                .ThenShouldThrow<ArgumentException>()
+                .Run();
+            }
+            catch (Exception ex)
+            {
+                caughtException = ex;
+            }
+
+            caughtException.Should().NotBeNull();
+        }
+
         private class SomethingHappened
         {
             public override string ToString()
