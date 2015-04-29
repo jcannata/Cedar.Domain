@@ -38,10 +38,6 @@
       <HintPath>..\packages\CompareNETObjects.3.02.0.0\lib\net45\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PowerAssert, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PowerAssert.1.0.16.0\lib\net40\PowerAssert.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
