@@ -52,13 +52,19 @@ task RunTests -depends Compile {
 }
 
 task ILMerge -depends Compile {
-    New-Item $mergedDir -Type Directory -ErrorAction SilentlyContinue
 
-    $mainDllName = "Cedar.Domain.dll"
-    $dllDir = "$srcDir\Cedar.Domain\bin\Release"
-    $inputDlls = "$dllDir\$mainDllName"
-    @(  "EnsureThat" ) |% { $inputDlls = "$inputDlls $dllDir\$_.dll" }
-    Invoke-Expression "$ilmergePath /targetplatform:v4 /internalize /allowDup /target:library /log /out:$mergedDir\$mainDllName.dll $inputDlls"
+    $merge = @(
+        "EnsureThat"
+    )
+
+    ILMerge -target "Cedar.Domain" -merge $merge -directory "$srcDir\Cedar.Domain\bin\Release"
+
+    $merge = @(
+        "Inflector", 
+        "KellermanSoftware.Compare-NET-Objects"
+    )
+
+    ILMerge -target "Cedar.Domain.Testing" -merge $merge -directory "$srcDir\Cedar.Domain.Testing\bin\Release"
 }
 
 task CreateNuGetPackages -depends ILMerge {
@@ -81,6 +87,33 @@ function FindTool {
 
 	return $result.FullName
 }
+
+function ILMerge {
+    param(
+        [string] $target,
+        [string[]] $merge,
+        [string] $directory,
+        [bool] $internalize = $true
+    )
+
+    if ($internalize -eq $true) {
+        $internalizeFlag = "-internalize"
+    }
+    else {
+        $internalizeFlag = $null
+    }
+
+    $primary = "$directory\$target.dll"
+
+    $merge = $merge |%  { "$directory\$_.dll" }
+
+    $out = "$mergedDir\$target.dll"
+
+    EnsureDirectory $mergedDir
+
+    & $ilmergePath -lib:$directory -targetplatform:v4 -wildcards $internalizeFlag -allowDup -target:library -log -out:$out $primary $merge
+}
+
 
 function Get-PackageConfigs {
     $packages = gci $srcDir -Recurse "packages.config" -ea SilentlyContinue
