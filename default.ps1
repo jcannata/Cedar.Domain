@@ -10,7 +10,7 @@ properties {
     $solutionFilePath       = "$srcDir\$projectName.sln"
     $assemblyInfoFilePath   = "$srcDir\SharedAssemblyInfo.cs"
     $nugetPath              = "$srcDir\.nuget\nuget.exe"
-    $nugetSource            = "http://www.nuget.org/api/v2"
+    $nugetSource            = "https://www.nuget.org/api/v2"
     $ilmergePath            = FindTool "ILMerge.*\tools\ilmerge.exe" "$packagesDir"
     $xunitRunner            = FindTool "xunit.runner.console.*\tools\xunit.console.exe" "$packagesDir"
 }
