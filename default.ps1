@@ -9,9 +9,10 @@ properties {
     $packagesDir            = "$srcDir\packages"
     $solutionFilePath       = "$srcDir\$projectName.sln"
     $assemblyInfoFilePath   = "$srcDir\SharedAssemblyInfo.cs"
+    $nugetPath              = "$srcDir\.nuget\nuget.exe"
+    $nugetSource            = "http://www.nuget.org/api/v2"
     $ilmergePath            = FindTool "ILMerge.*\tools\ilmerge.exe" "$packagesDir"
     $xunitRunner            = FindTool "xunit.runner.console.*\tools\xunit.console.exe" "$packagesDir"
-    $nugetPath              = "$srcDir\.nuget\nuget.exe"
 }
 
 task default -depends Clean, UpdateVersion, CreateNuGetPackages, RunTests
@@ -22,9 +23,10 @@ task Clean {
 }
 
 task RestoreNuget {
+    "Using nuget source $nugetSource"
     Get-PackageConfigs |% {
         "Restoring " + $_
-        &$nugetPath install $_ -o "$srcDir\packages" -configfile $_
+        &$nugetPath install $_ -o "$srcDir\packages" -configfile $_ -source $nugetSource
     }
 }
 
@@ -60,7 +62,7 @@ task ILMerge -depends Compile {
     ILMerge -target "Cedar.Domain" -merge $merge -directory "$srcDir\Cedar.Domain\bin\Release"
 
     $merge = @(
-        "Inflector", 
+        "Inflector",
         "KellermanSoftware.Compare-NET-Objects"
     )
 
