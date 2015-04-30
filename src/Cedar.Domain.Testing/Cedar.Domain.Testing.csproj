@@ -30,15 +30,81 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Inflector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inflector.1.0.0.0\lib\net45\Inflector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=3.2.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\packages\CompareNETObjects.3.02.0.0\lib\net45\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\PowerAssert\PowerAssert\Annotations.cs">
+      <Link>PowerAssert\Annotations.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Extensions.cs">
+      <Link>PowerAssert\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\NaturalExpressionProcessor.cs">
+      <Link>PowerAssert\Infrastructure\NaturalExpressionProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\NodeFormatter.cs">
+      <Link>PowerAssert\Infrastructure\NodeFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\ArrayIndexNode.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\ArrayIndexNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\BinaryNode.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\BinaryNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\ConditionalNode.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\ConditionalNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\ConstantNode.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\ConstantNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\MemberAccessNode.cs">
+      <Link>PowerAssert\Infrastructure\MemberAccessNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\MethodCallNode.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\MethodCallNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\NewArrayNode.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\NewArrayNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\Node.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\Node.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Nodes\UnaryNode.cs">
+      <Link>PowerAssert\Infrastructure\Nodes\UnaryNode.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\Infrastructure\Util.cs">
+      <Link>PowerAssert\Infrastructure\Util.cs</Link>
+    </Compile>
+    <Compile Include="..\PowerAssert\PowerAssert\PAssertFormatter.cs">
+      <Link>PowerAssert\PAssertFormatter.cs</Link>
+    </Compile>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="MessageEqualityComparer.cs" />
+    <Compile Include="PrintingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenario.Aggregate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cedar.Domain\Cedar.Domain.csproj">
+      <Project>{8248ED90-E771-4897-84F4-3B87C556B9D1}</Project>
+      <Name>Cedar.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
