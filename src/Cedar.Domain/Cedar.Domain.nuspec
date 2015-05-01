@@ -19,8 +19,8 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="bin\Release\Cedar.Domain.dll" target="lib\Portable-Net45+Win8+WP8+WPA81" />
-        <file src="bin\Release\Cedar.Domain.pdb" target="lib\Portable-Net45+Win8+WP8+WPA81" />
+        <file src="..\..\build\merged\Cedar.Domain.dll" target="lib\Portable-Net45+Win8+WP8+WPA81" />
+        <file src="..\..\build\merged\Cedar.Domain.pdb" target="lib\Portable-Net45+Win8+WP8+WPA81" />
         <file src="bin\Release\Cedar.Domain.xml" target="lib\Portable-Net45+Win8+WP8+WPA81" />
     </files>
 </package>
